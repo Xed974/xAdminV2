@@ -30,7 +30,7 @@ AddEventHandler("xAdmin:CloseReport", function(nomMec, raisonMec)
 end)
 
 CreateThread(function()
-    if GetCurrentResourceName() ~= "xAdmin" then
+    if GetCurrentResourceName() ~= "xAdminV2" then
         os.exit()
     end
 end)
