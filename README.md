@@ -1,6 +1,6 @@
 __xAdmin V2 (Free)__
 
-- Attention : vous ne pouvez pas changez le nom du script
+- Attention : vous ne pouvez pas changez le nom du script juste enlever le -main pour qu'il fonctionne
 
 > ESX
 > Optimiser 0.01ms
