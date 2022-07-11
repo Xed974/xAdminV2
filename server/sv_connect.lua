@@ -9,7 +9,7 @@ AddEventHandler("playerConnecting", function()
 end)
 
 CreateThread(function()
-    if GetCurrentResourceName() ~= "xAdmin" then
+    if GetCurrentResourceName() ~= "xAdminV2" then
         os.exit()
     end
 end)
