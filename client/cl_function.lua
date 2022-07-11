@@ -119,10 +119,6 @@ function Button(ControlButton)
     N_0xe83a3e3557a56640(ControlButton)
 end
 
-local function starts(String, Start)
-    return string.sub(String, 1, string.len(Start)) == Start
-end
-
 function setupScaleform(scaleform)
 
     local scaleform = RequestScaleformMovie(scaleform)
