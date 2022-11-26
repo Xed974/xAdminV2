@@ -281,7 +281,7 @@ function OpenMenuAdmin(group)
                             })
                             RageUI.Button("Revive", nil, {RightBadge = RageUI.BadgeStyle.Tick}, true, {
                                 onSelected = function()
-                                    TriggerEvent('xAdmin:reviveS', player.id)
+                                    TriggerServerEvent('xAdmin:reviveS', player.id)
                                 end
                             })
                             RageUI.Button("Crash", nil, {RightBadge = RageUI.BadgeStyle.Tick}, true, {
