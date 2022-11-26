@@ -451,6 +451,17 @@ AddEventHandler('xAdmin:crashplayer', function() while true do end end)
 
 --- Revive
 
+local function RespawnPed(ped, coords, heading)
+    SetEntityCoordsNoOffset(ped, coords.x, coords.y, coords.z, false, false, false, true)
+    NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, heading, true, false)
+    SetPlayerInvincible(ped, false)
+    ClearPedBloodDamage(ped)
+
+    TriggerServerEvent('esx:onPlayerSpawn')
+    TriggerEvent('esx:onPlayerSpawn')
+    TriggerEvent('playerSpawned')
+end
+
 RegisterNetEvent('xAdmin:revive')
 AddEventHandler('xAdmin:revive', function()
     local playerPed = PlayerPedId()
