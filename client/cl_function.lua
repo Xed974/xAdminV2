@@ -465,7 +465,7 @@ end
 RegisterNetEvent('xAdmin:revive')
 AddEventHandler('xAdmin:revive', function()
     local playerPed = PlayerPedId()
-    local coords = GetEntityCoords(playerPed, false)
+    local coords = GetEntityCoords(playerPed)
     TriggerServerEvent('esx_ambulancejob:setDeathStatus', 0)
     TriggerEvent('esx_status:resetStatus')
 
@@ -475,7 +475,7 @@ AddEventHandler('xAdmin:revive', function()
             Citizen.Wait(0)
         end
 
-        RespawnPed(playerPed, {coords = coords, heading = 0.0})
+        RespawnPed(playerPed, coords, 0.0)
         AnimpostfxStop('DeathFailOut')
         DoScreenFadeIn(800)
     end)
