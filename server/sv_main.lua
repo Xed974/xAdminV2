@@ -184,11 +184,6 @@ AddEventHandler('xAdmin:slapS', function(id) TriggerClientEvent('xAdmin:slap', i
 RegisterNetEvent('xAdmin:healS')
 AddEventHandler('xAdmin:healS', function(id) TriggerClientEvent('xAdmin:heal', id) end)
 
-RegisterNetEvent('xAdmin:spawncar')
-AddEventHandler('xAdmin:spawncar', function(type, id)
-    TriggerClientEvent('xAdmin:spwan', source, type, id)
-end)
-
 RegisterNetEvent('xAdmin:tpS')
 AddEventHandler('xAdmin:tpS', function(id, pos)
     TriggerClientEvent('xAdmin:tp', id, pos)
