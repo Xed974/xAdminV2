@@ -400,7 +400,14 @@ function OpenMenuAdmin(group)
                                                 local type = KeyboardInput("Modèle du véhicule", "", 15)
                                                 if type ~= "" then
                                                     if type ~= nil then
-                                                        TriggerServerEvent('xAdmin:spawncar', type, player.id)
+                                                        if not IsModelInCdimage(type) then return end
+                                                        RequestModel(type)
+                                                        while not HasModelLoaded(type) do
+                                                            Citizen.Wait(10)
+                                                        end
+                                                        ESX.Game.SpawnVehicle(type, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), function(vehicle) 
+                                                            TriggerServerEvent('xAdmin:givecargarage', ESX.Game.GetVehicleProperties(vehicle), player.id)
+                                                        end)
                                                     end
                                                 end
                                             end
