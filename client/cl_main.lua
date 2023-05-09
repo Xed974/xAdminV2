@@ -400,7 +400,7 @@ function OpenMenuAdmin(group)
                                                 local type = KeyboardInput("Modèle du véhicule", "", 15)
                                                 if type ~= "" then
                                                     if type ~= nil then
-                                                        TriggerServerEvent('xAdmin:spawncar', type)
+                                                        TriggerServerEvent('xAdmin:spawncar', type, player.id)
                                                     end
                                                 end
                                             end
