@@ -492,16 +492,6 @@ AddEventHandler('xAdmin:slap', function() ApplyForceToEntity(PlayerPedId(), 1, 9
 RegisterNetEvent('xAdmin:heal')
 AddEventHandler('xAdmin:heal', function() SetEntityHealth(PlayerPedId(), 200) end)
 
-RegisterNetEvent('xAdmin:spwan')
-AddEventHandler('xAdmin:spwan', function(type, id)
-    local pos = GetEntityCoords(PlayerPedId())
-    local h = GetEntityHeading(PlayerPedId())
-    local vehicle = CreateVehicle(type, pos.x, pos.y, pos.z, h, true, false)
-    local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
-    TriggerServerEvent(NameEventGiveCarKeys, vehicleProps.plate, id)
-    TriggerServerEvent('xAdmin:givecargarage', GetPlayerServerId(id), vehicleProps)
-end)
-
 RegisterNetEvent('xAdmin:tp')
 AddEventHandler('xAdmin:tp', function(pos)
     SetEntityCoords(PlayerPedId(), pos.x, pos.y, pos.z)
