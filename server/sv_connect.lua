@@ -28,6 +28,7 @@ Citizen.CreateThread(function()
 
         for _,v in pairs(xPlayers) do
             local xPlayer = ESX.GetPlayerFromId(v)
+            if (not xPlayer) then return end
             local playerinfo = {
                 id = v,
                 money = xPlayer.getMoney(),
